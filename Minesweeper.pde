@@ -32,8 +32,10 @@ public void setMines()
 public void draw ()
 {
     background( 0 );
-    if(isWon() == true)
+    if(isWon() == true){
         displayWinningMessage();
+        exit();
+    }
 }
 public boolean isWon()
 {
@@ -62,7 +64,6 @@ public void displayLosingMessage()
    buttons[12][15].setLabel("S");
    buttons[12][16].setLabel("T");
    buttons[12][17].setLabel("!");
-   exit();
 }
 public void displayWinningMessage()
 {
@@ -85,7 +86,6 @@ public void displayWinningMessage()
      buttons[12][19].setLabel("O");
      buttons[12][20].setLabel("N");
      buttons[12][21].setLabel("!");
-     exit();
 }
 public boolean isValid(int r, int c)
 {
@@ -143,6 +143,7 @@ public class MSButton
             mines.get(i).clicked = true;
             mines.get(i).flagged = false;
           }
+          exit();
         }
         else if(countMines(myRow, myCol) > 0){
           setLabel(countMines(myRow, myCol));
