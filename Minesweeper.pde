@@ -62,6 +62,7 @@ public void displayLosingMessage()
    buttons[12][15].setLabel("S");
    buttons[12][16].setLabel("T");
    buttons[12][17].setLabel("!");
+   exit();
 }
 public void displayWinningMessage()
 {
@@ -84,6 +85,7 @@ public void displayWinningMessage()
      buttons[12][19].setLabel("O");
      buttons[12][20].setLabel("N");
      buttons[12][21].setLabel("!");
+     exit();
 }
 public boolean isValid(int r, int c)
 {
