@@ -34,7 +34,6 @@ public void draw ()
     background( 0 );
     if(isWon() == true){
         displayWinningMessage();
-        exit();
     }
 }
 public boolean isWon()
@@ -143,7 +142,6 @@ public class MSButton
             mines.get(i).clicked = true;
             mines.get(i).flagged = false;
           }
-          exit();
         }
         else if(countMines(myRow, myCol) > 0){
           setLabel(countMines(myRow, myCol));
