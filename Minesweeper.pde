@@ -7,7 +7,7 @@ private ArrayList <MSButton> mines = new ArrayList <MSButton> (); //ArrayList of
 
 void setup ()
 {
-    size(400, 400);
+    size(500, 500);
     textAlign(CENTER,CENTER);
     Interactive.make(this);
     buttons = new MSButton[NUM_ROWS][NUM_COLS];
@@ -110,8 +110,8 @@ public class MSButton
     
     public MSButton (int row, int col )
     {
-        width = 400/NUM_COLS;
-        height = 400/NUM_ROWS;
+        width = 500/NUM_COLS;
+        height = 500/NUM_ROWS;
         myRow = row;
         myCol = col; 
         x = myCol*width;
