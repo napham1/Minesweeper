@@ -28,7 +28,6 @@ public void setMines()
       }
     }
 }
-
 public void draw ()
 {
     background( 0 );
