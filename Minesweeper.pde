@@ -132,47 +132,49 @@ public class MSButton
     // called by manager
     public void mousePressed () 
     {
-        clicked = true;
+        if(mouseButton ==  LEFT){
+            if(clicked == false){
+                clicked = true;
+                if(keyPressed == true){
+                    flagged != flagged;
+                }
+                else if(mines.contains(this)){
+                    displayLosingMessage();
+                }
+                else if(countMines(myRow, myCol) > 0){
+                    label = label + countMines(myRow, myCol);
+                }
+                else{
+                    if(isValid(myRow-1,myCol-1) && buttons[myRow - 1][myCol - 1].clicked == false){
+                        buttons[myRow - 1][myCol - 1].mousePressed();
+                    }
+                    if(isValid(myRow + 1, myCol + 1) && buttons[myRow + 1][myCol + 1].clicked == false){
+                        buttons[myRow + 1][myCol + 1].mousePressed();
+                    }
+                    if(isValid(myRow + 1,myCol-1) && buttons[myRow + 1][myCol - 1].clicked == false){
+                        buttons[myRow + 1][myCol - 1].mousePressed();
+                    }
+                   if(isValid(myRow - 1, myCol + 1) && buttons[myRow - 1][myCol + 1].clicked == false){
+                        buttons[myRow - 1][myCol + 1].mousePressed();
+                    }
+                  if(isValid(myRow - 1, myCol) && buttons[myRow - 1][myCol].clicked == false){
+                    buttons[myRow - 1][myCol].mousePressed();
+                  }
+                  if(isValid(myRow + 1, myCol) && buttons[myRow + 1][myCol].clicked == false){
+                    buttons[myRow + 1][myCol].mousePressed();
+                  }
+                  if(isValid(myRow, myCol - 1) && buttons[myRow][myCol - 1].clicked == false){
+                    buttons[myRow][myCol - 1].mousePressed();
+                  }
+                  if(isValid(myRow, myCol + 1) && buttons[myRow][myCol + 1].clicked == false){
+                    buttons[myRow][myCol + 1].mousePressed();
+                  }
+                }
+            }
+        }
         if(mouseButton == RIGHT){
-          if(flagged == true){
-            flagged = false;
-            clicked = false;
-            setLabel("");
-          }
-          else{
-            flagged = true;
-          }
-        }
-        else if(mines.contains(this)){
-          displayLosingMessage();
-        }
-        else if(countMines(myRow, myCol) > 0){
-          setLabel(countMines(myRow, myCol));
-        }
-        else{
-          if(isValid(myRow-1,myCol-1) && buttons[myRow - 1][myCol - 1].clicked == false){
-            buttons[myRow - 1][myCol - 1].mousePressed();
-          }
-          if(isValid(myRow + 1, myCol + 1) && buttons[myRow + 1][myCol + 1].clicked == false){
-            buttons[myRow + 1][myCol + 1].mousePressed();
-          }
-          if(isValid(myRow + 1,myCol-1) && buttons[myRow + 1][myCol - 1].clicked == false){
-            buttons[myRow + 1][myCol - 1].mousePressed();
-          }
-          if(isValid(myRow - 1, myCol + 1) && buttons[myRow - 1][myCol + 1].clicked == false){
-            buttons[myRow - 1][myCol + 1].mousePressed();
-          }
-          if(isValid(myRow - 1, myCol) && buttons[myRow - 1][myCol].clicked == false){
-            buttons[myRow - 1][myCol].mousePressed();
-          }
-          if(isValid(myRow + 1, myCol) && buttons[myRow + 1][myCol].clicked == false){
-            buttons[myRow + 1][myCol].mousePressed();
-          }
-          if(isValid(myRow, myCol - 1) && buttons[myRow][myCol - 1].clicked == false){
-            buttons[myRow][myCol - 1].mousePressed();
-          }
-          if(isValid(myRow, myCol + 1) && buttons[myRow][myCol + 1].clicked == false){
-            buttons[myRow][myCol + 1].mousePressed();
+          if(flagged == false){
+            flagged != flagged;
           }
         }
     }
