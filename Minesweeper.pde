@@ -50,6 +50,9 @@ public boolean isWon()
 }
 public void displayLosingMessage()
 {
+   for(int i = 0; i < mines.size(); i++){
+     mines.get(i).setClicked(true);
+   }
    buttons[12][6].setLabel("Y");
    buttons[12][7].setLabel("O");
    buttons[12][8].setLabel("U");
@@ -62,10 +65,6 @@ public void displayLosingMessage()
    buttons[12][15].setLabel("S");
    buttons[12][16].setLabel("T");
    buttons[12][17].setLabel("!");
-   for(int i = 0; i < mines.size(); i++){
-        mines.get(i).clicked = true;
-        mines.get(i).flagged = false;
-   }
 }
 public void displayWinningMessage()
 {
@@ -198,5 +197,8 @@ public class MSButton
     public boolean isFlagged()
     {
         return flagged;
+    }
+    public void setclicked(boolean c){
+        clicked = c;
     }
 }
