@@ -145,30 +145,15 @@ public class MSButton
                     label = label + countMines(myRow, myCol);
                 }
                 else{
-                    if(isValid(myRow-1,myCol-1) && buttons[myRow - 1][myCol - 1].clicked == false){
-                        buttons[myRow - 1][myCol - 1].mousePressed();
+                    for(int i = -1; i < 2; i++){
+                        for(int j = -1; j < 2; j++){
+                            if(isValid(myRow+i, myCol+j){
+                                if(buttons[myRow+i][myCol+j].clicked == false){
+                                    buttons[myRow+i][myCol+j].mousePressed();
+                                }
+                            }
+                        }
                     }
-                    if(isValid(myRow + 1, myCol + 1) && buttons[myRow + 1][myCol + 1].clicked == false){
-                        buttons[myRow + 1][myCol + 1].mousePressed();
-                    }
-                    if(isValid(myRow + 1,myCol-1) && buttons[myRow + 1][myCol - 1].clicked == false){
-                        buttons[myRow + 1][myCol - 1].mousePressed();
-                    }
-                   if(isValid(myRow - 1, myCol + 1) && buttons[myRow - 1][myCol + 1].clicked == false){
-                        buttons[myRow - 1][myCol + 1].mousePressed();
-                    }
-                  if(isValid(myRow - 1, myCol) && buttons[myRow - 1][myCol].clicked == false){
-                    buttons[myRow - 1][myCol].mousePressed();
-                  }
-                  if(isValid(myRow + 1, myCol) && buttons[myRow + 1][myCol].clicked == false){
-                    buttons[myRow + 1][myCol].mousePressed();
-                  }
-                  if(isValid(myRow, myCol - 1) && buttons[myRow][myCol - 1].clicked == false){
-                    buttons[myRow][myCol - 1].mousePressed();
-                  }
-                  if(isValid(myRow, myCol + 1) && buttons[myRow][myCol + 1].clicked == false){
-                    buttons[myRow][myCol + 1].mousePressed();
-                  }
                 }
             }
         }
