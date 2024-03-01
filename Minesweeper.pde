@@ -51,7 +51,7 @@ public boolean isWon()
 public void displayLosingMessage()
 {
    for(int i = 0; i < mines.size(); i++){
-     mines.get(i).setClicked(true);
+     mines.get(i).setclicked(true);
    }
    buttons[12][6].setLabel("Y");
    buttons[12][7].setLabel("O");
