@@ -46,6 +46,11 @@ public boolean isWon()
     if(mines.size() == count){
       return true;
     }
+    for(int i = 0; i < mines.size(); i==){
+        if(mines.get(i).isClicked() == true){
+            displayLosingMessage();
+        }
+    }
     return false;
 }
 public void displayLosingMessage()
